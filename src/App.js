@@ -1,10 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 
 import DrumMachine from './components/DrumMachine';
 function App() {
   return (
-    <div className="App">
+    <div id="drum-machine" className="drum_machine">
       <DrumMachine />
     </div>
   );

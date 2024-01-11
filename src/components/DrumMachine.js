@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
 export default function DrumMachine() {
   return (
-    <div id="drum-machine">
+    <div>
       hello drum machine
     </div>
   )

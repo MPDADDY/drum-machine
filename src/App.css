@@ -1,5 +1,12 @@
-.App {
-  text-align: center;
+.drum_machine {
+  position: absolute;
+  border: 5px solid orange;
+  width: fit-content;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 5px;
+
 }
 
 .App-logo {
