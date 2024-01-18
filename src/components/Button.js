@@ -1,7 +1,8 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect,useState } from 'react';
 
 function Button({ id, children, audioSrc, label }) {
   const audioRef = useRef(null);
+  const [isActive, setIsActive] = useState(false);
 
   const handleClick = () => {
     playAudio();
@@ -15,8 +16,29 @@ function Button({ id, children, audioSrc, label }) {
     }
   };
 
+  useEffect(()=> {
+   const handleKeyPress = (event) => {
+    if(event.key.toUpperCase() === label){
+      playAudio()
+
+      setIsActive(true);
+
+      // Set a timeout to remove the active state after a short delay
+      setTimeout(() => {
+        setIsActive(false);
+      }, 100);
+    }
+   }
+
+   document.addEventListener('keyup', handleKeyPress)
+
+   return  ()=> {
+    document.removeEventListener('keyup',handleKeyPress)
+   }
+  },[])
+
   return (
-    <button className='drum-pad' id={id} onClick={handleClick}>
+    <button className={`drum-pad ${isActive ? 'active' : ''}`} id={id} onClick={handleClick}>
       {children}
       <audio className='clip' ref={audioRef} id={label} src={audioSrc}></audio>
     </button>

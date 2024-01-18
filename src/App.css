@@ -38,3 +38,8 @@
 .drum-pad:active {
   background-color:  rgb(245, 166, 21)
 }
+
+.drum-pad.active {
+  /* Add your styles for the active state here */
+  background-color: rgb(245, 166, 21); /* Change to your desired color */
+}

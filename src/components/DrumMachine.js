@@ -25,6 +25,7 @@ export default function DrumMachine() {
     { id: 'RP4_KICK_1', audioSrc: RP4_KICK_1, label: 'C' },
   ];
 
+
   return   (
     <div className='drum_container'>
       {
