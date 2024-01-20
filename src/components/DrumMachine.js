@@ -13,6 +13,7 @@ import RP4_KICK_1 from './audios/RP4_KICK_1.mp3'
 
 export default function DrumMachine() {
 
+
   const buttons = [
     { id: 'Dsc_Oh', audioSrc: Dsc_Oh, label: 'Q' },
     { id: 'Heater_1', audioSrc: Heater_1, label: 'W' },

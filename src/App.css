@@ -11,9 +11,14 @@
   flex-direction: row;
 }
 .display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100px;
   height: 40px;
   background-color: gray;
+  font-weight: 800;
+  color: rgb(31, 28, 28);
 }
 
 .drum_container {
@@ -40,6 +45,32 @@
 }
 
 .drum-pad.active {
-  /* Add your styles for the active state here */
-  background-color: rgb(245, 166, 21); /* Change to your desired color */
+  background-color: rgb(245, 166, 21); 
+}
+
+.controls_container {
+  display: grid;
+  grid-template-columns: auto;
+  justify-content: space-around;
+  margin: auto 20px;
+  text-align: center;
+}
+
+.power {
+  width: 50px;
+  height: 25px;
+  background-color: black;
+  margin: auto auto 20px;
+}
+
+.powerbutton {
+  height: 100%;
+  width: 20px;
+  background-color: blue;
+  border: none;
+  float: right;
+}
+
+span {
+  font-weight: 800;
 }
