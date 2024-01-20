@@ -14,11 +14,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
+  width: 160px;
   height: 40px;
   background-color: gray;
   font-weight: 800;
   color: rgb(31, 28, 28);
+  margin: 15px;
 }
 
 .drum_container {

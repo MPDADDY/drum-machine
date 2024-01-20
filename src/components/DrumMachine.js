@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from './Button';
 
 import Dsc_Oh from './audios/Dsc_Oh.mp3'
@@ -12,7 +12,6 @@ import RP4_KICK_ from './audios/RP4_KICK_.mp3'
 import RP4_KICK_1 from './audios/RP4_KICK_1.mp3'
 
 export default function DrumMachine() {
-
 
   const buttons = [
     { id: 'Dsc_Oh', audioSrc: Dsc_Oh, label: 'Q' },
