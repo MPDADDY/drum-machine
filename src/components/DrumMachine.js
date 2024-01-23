@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Button from './Button';
 
 import Dsc_Oh from './audios/Dsc_Oh.mp3'
@@ -25,7 +25,6 @@ export default function DrumMachine() {
     { id: 'RP4_KICK_1', audioSrc: RP4_KICK_1, label: 'C' },
   ];
 
-
   return   (
     <div className='drum_container'>
       {
@@ -34,7 +33,7 @@ export default function DrumMachine() {
           {button.label}
         </Button>
         ))
-      }
+        }
     </div>
   )
 }

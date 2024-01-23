@@ -1,11 +1,14 @@
-import React, { useRef, useEffect,useState } from 'react';
+import React, { useRef, useEffect,useState,useContext } from 'react';
+import { DrumContext } from '../DrumContext';
 
 function Button({ id, children, audioSrc, label }) {
+  const { updateDisplay } = useContext(DrumContext);
   const audioRef = useRef(null);
   const [isActive, setIsActive] = useState(false);
 
   const handleClick = () => {
     playAudio();
+    updateDisplay(id)
   };
 
   const playAudio = () => {
@@ -35,7 +38,7 @@ function Button({ id, children, audioSrc, label }) {
    return  ()=> {
     document.removeEventListener('keyup',handleKeyPress)
    }
-  },[])
+  },[label])
 
   return (
     <button className={`drum-pad ${isActive ? 'active' : ''}`} id={id} onClick={handleClick}>

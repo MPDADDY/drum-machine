@@ -1,6 +1,9 @@
-import React from 'react'
+import React, {useContext} from 'react';
+import { DrumContext } from '../DrumContext';
 
 function Drumcontrols() { 
+  const { displayText } = useContext(DrumContext);
+
   return (
     <div className='controls_container'>
         <div>
@@ -11,11 +14,10 @@ function Drumcontrols() {
         </div>
   
         <div className='display' id="display">
-            display
+            {displayText}
         </div>
     </div>
   )
 }
 
 export default Drumcontrols
-
