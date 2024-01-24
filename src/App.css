@@ -55,6 +55,7 @@
   justify-content: space-around;
   margin: auto 20px;
   text-align: center;
+  transition: 2000ms ease;
 }
 
 .power {
@@ -64,12 +65,21 @@
   margin: auto auto 20px;
 }
 
+.power button:active {
+  background-color: aliceblue;
+}
+
+
 .powerbutton {
   height: 100%;
   width: 20px;
   background-color: blue;
   border: none;
-  float: right;
+  float: left;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 span {
