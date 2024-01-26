@@ -55,4 +55,3 @@ function Button({ id, children, audioSrc, label }) {
 }
 
 export default Button;
-

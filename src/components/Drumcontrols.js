@@ -3,11 +3,9 @@ import { DrumContext } from '../DrumContext';
 
 function Drumcontrols() { 
   const { displayText, powerOn, togglePower } = useContext(DrumContext);
-  // const [ powerOn, setPowerOn ] = useState(true); 
 
   const handlePowerClick = () => {
     const power = document.getElementById('power')
-    // setPowerOn(!powerOn)
     togglePower()
     power.style.float = powerOn ? 'right' : 'left';
   }
