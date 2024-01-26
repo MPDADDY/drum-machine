@@ -3,7 +3,7 @@
 <div align="center">
   <br/>
 
-  <h3><b>drum-machine</b></h3>
+  <h3><b>Drum Machine</b></h3>
 
 </div>
 
@@ -33,7 +33,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Markdown Previewer <a name="about-project"></a>
+# 📖 Drum Machine <a name="about-project"></a>
 
 **Drum machine**  Welcome to the Drum machine app, a React application that allows you to play sounds by simply using keyboard or clicking the app buttons.
 
