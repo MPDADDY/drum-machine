@@ -1,13 +1,14 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import { DrumContext } from '../DrumContext';
 
 function Drumcontrols() { 
-  const { displayText } = useContext(DrumContext);
-  const [ powerOn, setPowerOn ] = useState(true); 
+  const { displayText, powerOn, togglePower } = useContext(DrumContext);
+  // const [ powerOn, setPowerOn ] = useState(true); 
 
   const handlePowerClick = () => {
     const power = document.getElementById('power')
-    setPowerOn(!powerOn)
+    // setPowerOn(!powerOn)
+    togglePower()
     power.style.float = powerOn ? 'right' : 'left';
   }
 

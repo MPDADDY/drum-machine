@@ -1,14 +1,21 @@
-import React, { useRef, useEffect,useState,useContext } from 'react';
+import React, { useRef, useEffect, useState, useContext } from 'react';
 import { DrumContext } from '../DrumContext';
 
 function Button({ id, children, audioSrc, label }) {
-  const { updateDisplay } = useContext(DrumContext);
+  const { updateDisplay, powerOn } = useContext(DrumContext);
   const audioRef = useRef(null);
   const [isActive, setIsActive] = useState(false);
-
+  console.log(powerOn)
+  const timeout = () =>  setTimeout(() => {
+    setIsActive(false);
+  }, 50);
   const handleClick = () => {
+    if (powerOn) return;
     playAudio();
-    updateDisplay(id)
+    updateDisplay(id);
+    
+    setIsActive(true);
+   timeout();
   };
 
   const playAudio = () => {
@@ -19,26 +26,25 @@ function Button({ id, children, audioSrc, label }) {
     }
   };
 
-  useEffect(()=> {
-   const handleKeyPress = (event) => {
-    if(event.key.toUpperCase() === label){
-      playAudio()
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      if (event.key.toUpperCase() === label && powerOn) return;
 
-      setIsActive(true);
+      if (event.key.toUpperCase() === label && !powerOn) {
+        playAudio();
 
-      // Set a timeout to remove the active state after a short delay
-      setTimeout(() => {
-        setIsActive(false);
-      }, 100);
-    }
-   }
+        setIsActive(true);
+        updateDisplay(id);
+        timeout();
+      }
+    };
 
-   document.addEventListener('keyup', handleKeyPress)
+    document.addEventListener(powerOn ? '' : 'keyup', handleKeyPress);
 
-   return  ()=> {
-    document.removeEventListener('keyup',handleKeyPress)
-   }
-  },[label])
+    return () => {
+      document.removeEventListener(powerOn ? '' : 'keyup', handleKeyPress);
+    };
+  }, [label, powerOn]);
 
   return (
     <button className={`drum-pad ${isActive ? 'active' : ''}`} id={id} onClick={handleClick}>
@@ -49,3 +55,4 @@ function Button({ id, children, audioSrc, label }) {
 }
 
 export default Button;
+

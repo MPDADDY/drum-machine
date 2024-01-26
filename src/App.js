@@ -9,8 +9,6 @@ function App() {
          <DrumMachine />
          <Drumcontrols />
       </DrumContextProvider>
-     
-
     </div>
   );
 }

@@ -41,13 +41,13 @@
   outline: none;
 }
 
-.drum-pad:active {
+ .active {
   background-color:  rgb(245, 166, 21)
-}
+} 
 
-.drum-pad.active {
+ .drum-pad.active {
   background-color: rgb(245, 166, 21); 
-}
+} 
 
 .controls_container {
   display: grid;
