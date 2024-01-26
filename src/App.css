@@ -1,0 +1,86 @@
+.drum_machine {
+  position: absolute;
+  border: 5px solid orange;
+  width: fit-content;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 5px;
+  background-color: rgb(202, 194, 194);
+  display: flex;
+  flex-direction: row;
+}
+.display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 40px;
+  background-color: gray;
+  font-weight: 800;
+  color: rgb(31, 28, 28);
+  margin: 15px;
+}
+
+.drum_container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin: 1.2rem;
+}
+
+.drum-pad {
+  padding: 1.8rem 2.7rem;
+  background-color: gray;
+  color: black;
+  margin: 6px;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 2px 3px 5px  black;
+  font-weight: 800;
+  font-size: medium;
+  outline: none;
+}
+
+ .active {
+  background-color:  rgb(245, 166, 21)
+} 
+
+ .drum-pad.active {
+  background-color: rgb(245, 166, 21); 
+} 
+
+.controls_container {
+  display: grid;
+  grid-template-columns: auto;
+  justify-content: space-around;
+  margin: auto 20px;
+  text-align: center;
+  transition: 2000ms ease;
+}
+
+.power {
+  width: 50px;
+  height: 25px;
+  background-color: black;
+  margin: auto auto 20px;
+}
+
+.power button:active {
+  background-color: aliceblue;
+}
+
+.powerbutton {
+  height: 100%;
+  width: 20px;
+  background-color: blue;
+  border: none;
+  float: left;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+span {
+  font-weight: 800;
+}
